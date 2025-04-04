@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>BookLendedSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BookLendedSuccess</shortDescription>
+        <value>Book loaned successfully!</value>
+    </labels>
+    <labels>
+        <fullName>NoCopiesError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoCopiesError</shortDescription>
+        <value>No available copies for this book.</value>
+    </labels>
+    <labels>
+        <fullName>SelectBorrowerError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SelectBorrowerError</shortDescription>
+        <value>Please select a borrower before loaning a book.</value>
+    </labels>
+    <labels>
+        <fullName>SelectDateError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SelectDateError</shortDescription>
+        <value>Please select a valid return date before loaning a book.</value>
+    </labels>
+</CustomLabels>

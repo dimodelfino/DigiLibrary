@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StartDateBeforeEndDate</fullName>
+    <active>true</active>
+    <description>Validates that the Loan Start Date is before Loan End Date</description>
+    <errorConditionFormula>Loan_Start_Date__c &gt;  Loan_End_Date__c</errorConditionFormula>
+    <errorMessage>Loan Start Date cannot be later than Loan End Date. Please enter a valid date range.</errorMessage>
+</ValidationRule>

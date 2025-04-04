@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="Library Management">
+        <div class="slds-p-around_medium">
+                    <lightning-input
+                        type="text"
+                        label="Search Books"
+                        placeholder="Enter title or author..."
+                        value={searchTerm}
+                        onchange={handleSearchChange}>
+                    </lightning-input>
+                <div class="slds-m-top_small slds-align_absolute-center">
+                    <lightning-button
+                        label="Search"
+                        variant="brand"
+                        onclick={handleSearch}
+                        disabled={isSearchDisabled}>
+                    </lightning-button>
+                </div>
+        </div>
+        
+        <template if:true={books}>
+            <div class="slds-p-around_medium">
+                <lightning-layout multiple-rows>
+                    <template for:each={books} for:item="book">
+                        <lightning-layout-item key={book.Id} size="12" class="slds-p-around_small">
+                            <div class="slds-box slds-theme_shade">
+                                <h2 class="slds-text-heading_medium">{book.Title__c}</h2>
+                                <p class="slds-text-title">Author: {book.Author__c}</p>
+                                <p>Available Copies: {book.Available_Copies__c}</p>
+                                <lightning-record-picker
+                                    value={selectedBorrowerId}
+                                    class="slds-col slds-size_1-of-1"
+                                    label="Select Borrower"
+                                    object-api-name="Contact"
+                                    data-id={book.Id}
+                                    onchange={handleBorrowerSelect}
+                                    placeholder="Search for a borrower...">
+                                </lightning-record-picker>
+
+                                <lightning-input
+                                    type="date"
+                                    label="Loan End Date"
+                                    value={book.loanEndDate}
+                                    data-id={book.Id}
+                                    onchange={handleLoanEndDateChange}>
+                                </lightning-input>
+
+                                <div class="slds-m-top_medium slds-align_absolute-center">
+                                    <lightning-button
+                                        label="Loan Book"
+                                        variant="success"
+                                        data-id={book.Id}
+                                        data-available-copies={book.Available_Copies__c}
+                                        onclick={handleLoan}>
+                                    </lightning-button>
+
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+            </div>
+        </template>
+    </lightning-card>
+</template>
