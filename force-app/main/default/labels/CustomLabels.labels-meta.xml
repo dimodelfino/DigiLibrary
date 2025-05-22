@@ -11,7 +11,7 @@
         <fullName>NoCopiesError</fullName>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>NoCopiesError</shortDescription>
+        <shortDescription>NoCopiesError</shortDescription> 
         <value>No available copies for this book.</value>
     </labels>
     <labels>
